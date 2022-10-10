@@ -1,5 +1,5 @@
-import React, { useReducer, useState } from "react";
-import Post from "./useReducer/Post";
+// import React, { useReducer, useState } from "react";
+// import Post from "./useReducer/Post";
 
 // import ReactDOM from "react-dom";
 // import Switch from "./switch";
@@ -78,10 +78,18 @@ import Post from "./useReducer/Post";
 //     </div>
 //   );
 // }
+import { useSelector } from "react-redux";
 
 function App() {
   // return <Toggle />;
-  return <Post />;
+  // return <Post />;
+  const counter = useSelector((state) => state.counter);
+  return (
+    <div>
+      <h1>Counter App</h1>
+      <h2>{counter}</h2>
+    </div>
+  );
 }
 
 export default App;
